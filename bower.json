@@ -1,0 +1,26 @@
+{
+  "name": "philtre",
+  "version": "0.0.1",
+  "homepage": "https://github.com/philadams/philtre",
+  "authors": [
+    "Phil Adams <philadams.net@gmail.com>"
+  ],
+  "description": "Image filters in javascript using <canvas>",
+  "main": "js/philtre.js",
+  "keywords": [
+    "canvas",
+    "filter",
+    "philtre",
+    "image",
+    "convolve",
+    "convolution"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
