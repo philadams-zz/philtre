@@ -3,6 +3,7 @@ var img = document.getElementById('demo-image');
 
 // run filter
 var idata = Philtre.filterImage(Philtre.identity, img);
+var idata = Philtre.filterImage(Philtre.grayscale, img);
 
 // show results
 var canvas = Philtre.getCanvas(img.width, img.height);

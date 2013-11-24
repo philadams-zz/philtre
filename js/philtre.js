@@ -26,3 +26,16 @@ Philtre.filterImage = function(filter, image, var_args) {
 Philtre.identity = function(pixels, args) {
   return pixels;
 }
+
+Philtre.grayscale = function(pixels, args) {
+  var d = pixels.data;
+  for (var i=0; i<d.length; i+=4) {
+    var r = d[i],
+        g = d[i+1],
+        b = d[i+2];
+    // CIE luminance
+    var v = 0.2126 * r + 0.7152*g + 0.0722 * b;
+    d[i] = d[i+1] = d[i+2] = v;
+  }
+  return pixels;
+};
