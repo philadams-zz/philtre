@@ -1,9 +1,10 @@
 // set up
 var img = document.getElementById('demo-image');
 
-// run filter
+// run filters
 var idata = Philtre.filterImage(Philtre.identity, img);
 var idata = Philtre.filterImage(Philtre.grayscale, img);
+var idata = Philtre.filterImage(Philtre.brighten, img, 40);
 
 // show results
 var canvas = Philtre.getCanvas(img.width, img.height);
