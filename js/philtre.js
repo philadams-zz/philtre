@@ -49,3 +49,23 @@ Philtre.brighten = function(pixels, adjustment) {
   }
   return pixels;
 }
+
+Philtre.invert = function(pixels) {
+  console.error('Not yet implemented');
+  return pixels;
+}
+
+Philtre.threshold = function(pixels, threshold) {
+  console.error('Not yet implemented');
+  return pixels;
+}
+
+Philtre.flipHorizontal = function(pixels) {
+  console.error('Not yet implemented');
+  return pixels;
+}
+
+Philtre.flipVertical = function(pixels) {
+  console.error('Not yet implemented');
+  return pixels;
+}
