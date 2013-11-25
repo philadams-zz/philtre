@@ -58,7 +58,8 @@ Philtre.grayscale = function(pixels, args) {
     var r = d[i],
         g = d[i+1],
         b = d[i+2];
-    // CIE luminance
+    // standard objective luminance (CIE)
+    // TODO play with different luminance parameters?
     var v = 0.2126 * r + 0.7152*g + 0.0722 * b;
     d[i] = d[i+1] = d[i+2] = v;
   }
@@ -98,6 +99,19 @@ Philtre.sepia = function(pixels, percent) {
 }
 
 Philtre.threshold = function(pixels, threshold) {
-  console.error('Not yet implemented');
+  // 0.299*R + 0.587*G + 0.114*B
+  if (threshold == null) {
+    threshold = 124;
+  }
+  var high = 255,
+      low = 0;
+  var d = pixels.data;
+  for (var i=0; i<d.length; i+=4) {
+    var r = d[i];
+    var g = d[i+1];
+    var b = d[i+2];
+    var v = (0.299*r + 0.587*g + 0.114*b >= threshold) ? high : low;
+    d[i] = d[i+1] = d[i+2] = v;
+  }
   return pixels;
 }
