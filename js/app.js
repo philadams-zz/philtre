@@ -5,13 +5,13 @@ var img = document.getElementById('demo-image');
 var idata = Philtre.filterImage(Philtre.identity, img);
 var idata = Philtre.filterImage(Philtre.grayscale, img);
 var idata = Philtre.filterImage(Philtre.brighten, img, 40);
-var idata = Philtre.filterImage(Philtre.invert, img);
 var idata = Philtre.filterImage(Philtre.threshold, img, 100);
 var idata = Philtre.filterImage(Philtre.contrast, img, 25);
 var idata = Philtre.filterImage(Philtre.saturate, img, 40);
 var idata = Philtre.filterImage(Philtre.sepia, img, 40);
 var idata = Philtre.filterImage(Philtre.flipHorizontal, img);
 var idata = Philtre.filterImage(Philtre.flipVertical, img);
+var idata = Philtre.filterImage(Philtre.invert, img);
 
 // show results
 var canvas = Philtre.getCanvas(img.width, img.height);

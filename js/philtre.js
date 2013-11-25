@@ -66,7 +66,13 @@ Philtre.sepia = function(pixels, percent) {
 }
 
 Philtre.invert = function(pixels) {
-  console.error('Not yet implemented');
+  var d = pixels.data;
+  for (var i=0; i<d.length; i+=4) {
+    d[i] = 255 - d[i];
+    d[i+1] = 255 - d[i+1];
+    d[i+2] = 255 - d[i+2];
+    //d[i+3] = 255 - d[i+3];  // optional alpha
+  }
   return pixels;
 }
 
