@@ -50,6 +50,21 @@ Philtre.brighten = function(pixels, adjustment) {
   return pixels;
 }
 
+Philtre.contrast = function(pixels, percent) {
+  console.error('Not yet implemented');
+  return pixels;
+}
+
+Philtre.saturate = function(pixels, percent) {
+  console.error('Not yet implemented');
+  return pixels;
+}
+
+Philtre.sepia = function(pixels, percent) {
+  console.error('Not yet implemented');
+  return pixels;
+}
+
 Philtre.invert = function(pixels) {
   console.error('Not yet implemented');
   return pixels;
