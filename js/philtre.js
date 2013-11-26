@@ -73,8 +73,22 @@ Philtre.flipHorizontal = function(pixels) {
 };
 
 Philtre.flipVertical = function(pixels) {
-  console.error('Not yet implemented');
-  return pixels;
+  var src = pixels.data,
+      w = pixels.width,
+      h = pixels.height;
+  var output = Philtre.createImageData(w, h);
+  var dst = output.data;
+  for (var y=0; y<h; y++) {
+    for (var x=0; x<w; x++) {
+      var srcpxl = (y*w+x)*4;
+      var dstpxl = ((h-y-1)*w+x)*4;
+      dst[dstpxl] = src[srcpxl];
+      dst[dstpxl+1] = src[srcpxl+1];
+      dst[dstpxl+2] = src[srcpxl+2];
+      dst[dstpxl+3] = src[srcpxl+3];
+    }
+  }
+  return output;
 };
 
 Philtre.grayscale = function(pixels, args) {
