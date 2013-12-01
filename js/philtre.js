@@ -132,7 +132,22 @@ Philtre.saturate = function(pixels, percent) {
   return pixels;
 };
 
-Philtre.sepia = function(pixels, percent) {
+Philtre.sepia = function(pixels) {
+  var d = pixels.data;
+  for (var i=0; i<d.length; i+=4) {
+    var r = Math.min(255, (0.393*d[i]) + (0.769*d[i+1]) + (0.189*d[i+2]));
+    var g = Math.min(255, (0.349*d[i]) + (0.686*d[i+1]) + (0.168*d[i+2]));
+    var b = Math.min(255, (0.272*d[i]) + (0.534*d[i+1]) + (0.131*d[i+2]));
+    d[i] = r;
+    d[i+1] = g;
+    d[i+2] = b;
+    //d[i+3] = d[i+3];  // optional alpha
+  }
+  return pixels;
+};
+
+Philtre.solarize = function(pixels, percent) {
+  // invert, but only for r,g,b>127
   console.error('Not yet implemented');
   return pixels;
 };
