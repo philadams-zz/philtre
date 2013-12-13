@@ -128,6 +128,7 @@ Philtre.invert = function(pixels) {
 };
 
 Philtre.saturate = function(pixels, percent) {
+  // or do vibrance?
   console.error('Not yet implemented');
   return pixels;
 };
@@ -146,9 +147,15 @@ Philtre.sepia = function(pixels) {
   return pixels;
 };
 
-Philtre.solarize = function(pixels, percent) {
+Philtre.solarize = function(pixels) {
   // invert, but only for r,g,b>127
-  console.error('Not yet implemented');
+  var d = pixels.data;
+  for (var i=0; i<d.length; i+=4) {
+    d[i] = d[i] > 127 ? 255 - d[i] : d[i];
+    d[i+1] = d[i+1] > 127 ? 255 - d[i+1] : d[i+1];
+    d[i+2] = d[i+2] > 127 ? 255 - d[i+2] : d[i+2];
+    //d[i+3] = 255 - d[i+3];  // optional alpha
+  }
   return pixels;
 };
 
